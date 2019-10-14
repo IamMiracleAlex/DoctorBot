@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <title>DoctorBot</title>
+  <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="shortcut icon" type="image/x-icon"
+      href="static\bot-sm.jpg" />
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      
+     
+     
+      #chatbox {
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+        margin-top: 60px;
+      }
+      #userInput {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin-top: 60px;
+      }
+      #textInput {
+        width: 80%;
+        border: none;
+        border-bottom: 1px solid black;
+        font-family: monospace;
+        font-size: 17px;
+      }
+      .userText {
+        color: black;
+        font-family: monospace;
+        font-size: 17px;
+        text-align: right;
+        line-height: 1.3;
+      
+      }
+      .userText span {
+        background-color: yellow;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .botText {
+        color: black;
+        font-family: monospace;
+        display: inline-block;
+        font-size: 17px;
+        text-align: left;
+        line-height: 1.3;
+   
+        max-width: 350px;
+        background-color: #99f5f5;
+        border-radius: 10px;
+        padding: 7px 13px;
+        
+      }
+      .botText  span {
+        border-radius: 0px;
+       
+        
+      }
+      #tidbit {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+      }
+      .boxed {
+         padding-top: .08rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 78%;
+        margin-top: 60px;
+        /* box-shadow: cadetblue; */
+        /* border: 1px solid green; */
+        -webkit-box-shadow: 20px -16px 5px -10px rgba(46,74,117,1);
+         -moz-box-shadow: 20px -16px 5px -10px rgba(46,74,117,1);
+         box-shadow: 20px -16px 5px -10px rgba(46,74,117,1)
+      }
+      
+
+      @media screen and (max-width: 767px) {
+         #chatbox {
+        width: 90%;
+         }
+      }
+    </style>
+  </head>
+  <body style="background-color:whitesmoke">
+
+   <!--nagivation bar container-->
+        <nav class="navbar navbar-expand-lg navbar-light pt-2" style="background-color: #99f5f5;">
+         <a class="navbar-brand" href="{{url_for('home')}}">
+           <h3>Doctor Bot</h3>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+   
+            </ul>
+            <ul class="navbar-nav mr-4 ">
+   
+               <li class="nav-item mr-4 ">
+                  <a class="nav-link " href="{{url_for('home')}}">Home</a>
+               </li>
+               <li class="nav-item mr-4">
+                  <a class="nav-link active" href="{{url_for('doctorbot')}}">Chat</a>
+               </li>
+           
+               <li class="nav-item mr-4 "><a class="nav-link " href="{{url_for('about')}}">About Us</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+   
+
+
+
+
+
+
+    
+    
+    
+    <div class="box"></div>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+         
+         <p class="botText">
+            <span>Hi! I'm DoctorBot ❤️</span>
+          </p>
+        </div>
+        <div id="userInput">
+          <input id="textInput" type="text" name="msg" placeholder="Kindly start a conversation" />
+        </div>
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document
+            .getElementById("userInput")
+            .scrollIntoView({ block: "start", behavior: "smooth" });
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+            $("#chatbox").append(botHtml);
+            document
+              .getElementById("userInput")
+              .scrollIntoView({ block: "start", behavior: "smooth" });
+          });
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

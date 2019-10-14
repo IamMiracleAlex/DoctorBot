@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+   <!-- external style sheets -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
+   <link rel="stylesheet" href="css/style.css">
+   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+   <link rel="shortcut icon" type="image/x-icon"
+   href="static\bot-sm.jpg" />
+
+      <style>
+          h1 {
+             margin-top: 3rem;
+          }
+
+          .container {
+            width: 65%;
+          }
+
+      </style>
+
+        <title>Doctor Bot</title>
+
+    </head>
+    <body >
+        <!--nagivation bar container-->
+        <nav class="navbar navbar-expand-lg navbar-light pt-2" style="background-color:#99f5f5;">
+         <a class="navbar-brand" href="home.html">
+           <h3>Doctor Bot</h3>
+         </a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+   
+            </ul>
+            <ul class="navbar-nav mr-4 ">
+   
+               <li class="nav-item mr-4 ">
+                  <a class="nav-link active" href="{{url_for('home')}}">Home</a>
+               </li>
+               <li class="nav-item mr-4">
+                  <a class="nav-link " href="{{url_for('doctorbot')}}">Chat</a>
+               </li>
+           
+               <li class="nav-item mr-4 "><a class="nav-link " href="{{url_for('about')}}">About Us</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+   
+   
+      <center>
+         <h1>
+           <img
+             src="static\bot-sm.jpg"
+             alt=""
+             style="width:50px; height:50px;"
+           /> Meet DoctorBot, Your Medical Assistant.
+         </h1>
+       </center>
+
+
+       <section>
+         <div class="container-fluid pl-4 pr-4">
+            <div class="row">
+               <div class="col-md-6 pt-4">
+                
+                  <center>
+                     <h4 class="ml-3 mt-5 pt-2">Welcome to your online consultancy center.</h4>
+                     <a class="btn btn-info mt-5 ml-3 pl-4 pr-4 pt-2 pb-2" href="{{url_for('doctorbot')}}">Start Chat</a>
+                     <br><br><br>
+                     <h4 class="ml-3 mt-5 pt-2"> About</h4>
+                     <p class="text-justify">
+                        DoctorBot is a simple Bot that helps individuals and professionals to have extensive knowledge about a medical condition. To achieve this, it accepts keywords or phrases of these medical conditions.
+                     </p>
+                     <p class="text-justify">
+                        For instance, you are sick or want to know about a medical condition, simply use keywords or phrase such as: stomach ache, pregnancy, headache, typhoid, malaria and typhoid, hiv, ebola, etc
+                     </p>
+                     
+                     <h6>Fun Fact</h6>
+                     <p class="mb-5 text-justify">
+                        Having a conversation with DoctorBot is never boring... It understands basic human greetings e.g: Hello, Hi, Hey!, Hola! etc - with other forms of validation e.g: sure? alright, cool, etc. As well as: how are you?, how are you doing? etc. Make sure you exchange pleasantries with DoctorBot. Be friendly!
+                     </p>
+                    
+                     
+   
+                  </center>
+               </div>
+               <div class="col-md-6 right-side mt-5 mb-5 image">
+                  <center>
+                        <img src="static/botimg-lg.jpg" width="85%" height="80%" class="img-fluid" alt="home-image">
+                  </center>
+               </div>
+            </div>
+         </div>
+      </section>
+   
+
+
+
+   <section>
+      <div class="container text-justify">
+         <div class="row">
+               <h2>Disclaimer</h1>
+         
+                  <p>
+                     Every effort has been made to ensure that the information provided is accurate, up-to-date and complete, but no guarantee is made to that effect. In addition, the drug information contained herein may be time sensitive and should not be utilized as a reference resource beyond the date hereof. This material does not endorse drugs, diagnose patients, or recommend therapy. This information is a reference resource designed as supplement to, and not a substitute for, the expertise, skill, knowledge, and judgement of healthcare practitioners in patient care. The absence of a warning for a given drug or combination thereof in no way should be construed to indicate safety, effectiveness, or appropriateness for any given patient.
+                  </p>
+                     
+                  <p>
+                     DoctorBot does not assume any responsibility for any aspect of healthcare administered with the aid of materials provided. The information contained herein is not intended to cover all possible uses, directions, precautions, warnings, drug interactions, allergic reactions, or adverse effects. If you have questions about  the substances you are taking, check with your doctor, nurse, or pharmacist.
+                  </p>
+         </div>
+      </div>
+      
+   </section>
+
+
+
+      <footer >
+         <div class="container-fluid p-4 text-center text-light" style="background-color: rgb(128, 125, 125);">
+            <div>
+               Copyright &copy; 2019 Doctor Bot.
+               <br>
+               All Rights Reserved.
+            </div>
+         </div>
+   
+      </footer>
+   
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   
+      <!-- Developer-->
+   
+      <!-- Miracle C. Alex -->
+      <!-- 08026043569 -->
+      <!-- collinsalex50@gmail.com -->
+    </body>
+</html>
