@@ -58,11 +58,7 @@ def home():
 
 @app.route('/doctorbot')
 def doctorbot():
-   return render_template('doctorbot.html') 
-
-@app.route('/about')
-def about():
-   return render_template('about.html')    
+   return render_template('doctorbot.html')    
 
 
 @app.route("/get")
