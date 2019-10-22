@@ -27,7 +27,7 @@ malaria = ['Malaria','Malaria and typhoid']
 
 pain = ['Pain','Pains','Aches'] #what kind of pain?
 
-typhoid = ['Typhoid','Typhoid and malaria']
+typhoid = ['Typhoid','Typhoid and malaria','Typhoid fever']
 
 cough = ['Cough','I am coughing']
 
@@ -53,6 +53,7 @@ cancer = ['Cancer','Breast cancer','Lungs cancer','Prostate cancer','Skin cancer
 
 hbp = ['Hbp','HPB','Hypertension','High blood pressure']
 
+thanks = ['Thanks','Thank you','I appreciate',"I'm grateful"]
 
 
 @app.route('/')
@@ -87,7 +88,7 @@ def get_bot_response():
          return random_response
 
       elif userInput in ['Sure','Fine','Not fine','I am fine',"I'm not fine",'Not well','I am not well','I      am not feeling fine','Not feeling fine','I am okay','Okay','Not okay','Alright','Cool','Dope','Great','Awesome','Splendid','Beautiful']:
-         response = "Alright, kindly give me a keyword of any medical condition you want to know about."
+         response = "Alright, kindly give me a keyword of any medical condition you want to know about"
          time.sleep(.3)
          return response
 
@@ -97,11 +98,11 @@ def get_bot_response():
 
       elif userInput in stomach:
          time.sleep(.3)
-         return "You're in luck! Check <a style='color:red' target='_blank' href='https://www.webmd.com/first-aid/abdominal-pain-in-adults-treatment'>this</a> out for abdominal pains"
+         return "You're in luck! Check <a style='color:red' target='_blank' href='https://www.webmd.com/first-aid/abdominal-pain-in-adults-treatment'>this</a> out for abdominal pains."
 
       elif userInput in pregnant:
          time.sleep(.3)
-         return "Wow! Congratulations on your pregnancy.. <a style='color:blue' target='_blank' href='https://www.healthline.com/health/pregnancy'>Here</a> is all you need to know about preganancy."
+         return "Wow! Congratulations on your pregnancy.. <a style='color:blue' target='_blank' href='https://www.healthline.com/health/pregnancy'>Here</a> is all you need to know about preganancy"
 
       elif userInput in body:
          time.sleep(.3)
@@ -119,9 +120,13 @@ def get_bot_response():
          time.sleep(.3)
          return "I'm so sorry about that.. What kind of pain are going through?"
 
+      elif userInput in thanks:
+         time.sleep(.3)
+         return "You welcome, Always!"  
+
       elif userInput in typhoid:
          time.sleep(.3)
-         return "Typhoid? You are in the right place! kindly go <a style='color:cyan' target='_blank' href='https://www.mayoclinic.org/diseases-conditions/typhoid-fever/diagnosis-treatment/drc-20378665'>here</a> for more information"
+         return "Typhoid? You are in the right place! kindly go <a style='color:blue' target='_blank' href='https://www.mayoclinic.org/diseases-conditions/typhoid-fever/diagnosis-treatment/drc-20378665'>here</a> for more information"
 
       elif userInput in infect:
          time.sleep(.3)
@@ -134,7 +139,7 @@ def get_bot_response():
 
       elif userInput in fever:
          time.sleep(.3)
-         return "Fever can be frustrating! Visit <a style='color:red' target='_blank' href='https://www.medicalnewstoday.com/articles/168266.php'>this</a> resource for everything fever and cold" 
+         return "Fever can be frustrating! Visit <a style='color:red' target='_blank' href='https://www.medicalnewstoday.com/articles/168266.php'>this</a> resource for everything about fever and cold" 
 
       elif userInput in dia:
          time.sleep(.3)
@@ -142,7 +147,7 @@ def get_bot_response():
 
       elif userInput in infection:
          time.sleep(.3)
-         return "Lucky you! I just searched the whole internet for you.. <a style='color:red' target='_blank' href='https://www.healthline.com/health/infections'>See</a> what I found about infections"
+         return "Lucky you! I just searched the whole internet for you.. <a style='color:red' target='_blank' href='https://www.healthline.com/health/infections'>See</a> what I found about infections."
       elif userInput in incurable:
          time.sleep(.3)
          return "I thought it doesn't have a cure.. Lol! Have you manufactured one?" 
@@ -153,11 +158,11 @@ def get_bot_response():
 #
       elif userInput in cancer:
          time.sleep(.3)
-         return "Today is a good day. I can assure you that! I found a resource that can help you with cancer, Kingly go <a style='color:blue' target='_blank' href='https://www.medicinenet.com/cancer/article.htm'>here</a>. Good luck!"
+         return "Today is a good day. I can assure you that! I found a resource that can help you with cancer, Kingly go <a style='color:blue' target='_blank' href='https://www.medicinenet.com/cancer/article.htm'>here</a> Good luck!"
 
       elif userInput in hbp:
          time.sleep(.3)
-         return "Today is a good day. I can assure you that! I found a resource that can help you with Hypertension , Kingly go <a style='color:purple' target='_blank' href='https://www.healthline.com/health/high-blood-pressure-hypertension#home-remedies-for-hypertension'>here</a>. Good luck!"
+         return "Today is a good day. I can assure you that! I found a resource that can help you with Hypertension, Kingly go <a style='color:blue' target='_blank' href='https://www.healthline.com/health/high-blood-pressure-hypertension#home-remedies-for-hypertension'>here</a> Good luck!"
 #
       elif userInput in lol:
          time.sleep(.3)
@@ -172,9 +177,15 @@ def get_bot_response():
          return "Hey! You're really lucky to know me.. Guess what? I've got something for you <a style='color:red' target='_blank' href='https://www.healthline.com/health/hiv-aids'>here</a>"
 
       else:
-         advice = random.choice(["I'm sorry, I don't understand you..","Please use a keyword or a short phrase","Ooops! Was that Latin?","No! That's not right, try again!","I wasn't expecting that, please type a keyword of the medical condition you want to know about","Come on. I'm just a Bot! Use a keyword please"])
+         advice = random.choice([" I'm sorry, I don't understand you. Use words like: 'joint pain', 'vaginal infection', 'bird flu', 'hypertension', 'cholera', 'syphilis', and more..",
+         "Please use a keyword or a short phrase like: 'Hello', 'Hi', 'Hey!', 'Hola!'",
+         "Ooops! Was that Latin?",
+         "No! That's not right, try this: 'sure?', 'alright', 'cool', etc. As well as: 'how are you?', 'how are you doing?'",
+         "I wasn't expecting that, please type a keyword of the medical condition you want to know about","Come on. I'm just a Bot! Use a keyword please",
+         "kindly use keywords like: 'stomach ache', 'pregnancy', 'headache', 'typhoid', 'malaria', 'hiv', or 'ebola'. Thank you."])
          time.sleep(.3)
-         return advice        
+         return advice
+           
 
 if __name__ == "__main__":
    app.run(debug=True)
